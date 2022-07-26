@@ -2,7 +2,7 @@ import {
   isDaySelectable,
   addDayToRange,
   getDatesBetweenDates,
-  getBlockedDates,
+  // getBlockedDates,
   calcNumberOfNightsBetweenDates,
 } from "lib/dates";
 import prisma from 'lib/prisma'
@@ -49,7 +49,7 @@ export default function Calendar({ bookedDates }) {
     const daysInBetween = getDatesBetweenDates(range.from, range.to);
 
     for (const dayInBetween of daysInBetween) {
-      if (!isDaySelectable(dayInBetween)) {
+      if (!isDaySelectable(dayInBetween , bookedDates)) {
         alert("Some days between those 2 dates cannot be selected");
         return;
       }
