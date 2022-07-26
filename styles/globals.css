@@ -6,3 +6,7 @@ body{
 background-color: black;
 color: white;
 }
+
+.rdp-day {
+    border-radius: 0 !important;
+  }
